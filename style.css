@@ -31,10 +31,6 @@ li:hover .submenu{display:block;}
 .submenu a{color:#0b1223;display:block;padding:6px 10px;}
 .hamburger{display:none;background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer;}
 
-/* Hero */
-.hero{width:100%; overflow:hidden;}
-.hero-inner img{width:100%; display:block; border-radius:12px; box-shadow:var(--shadow);}
-
 /* Slider de noticias */
 .slider{display:flex;overflow:hidden;margin:24px 0;border-radius:12px;box-shadow:var(--shadow);}
 .slide{min-width:100%;transition:0.5s;}
@@ -64,5 +60,4 @@ li:hover .submenu{display:block;}
 }
 @media(max-width:600px){
   .cards{grid-template-columns:1fr;}
-  .hero-inner img{border-radius:8px;}
 }
