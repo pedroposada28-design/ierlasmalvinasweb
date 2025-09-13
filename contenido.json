@@ -25,36 +25,23 @@
     {"id":"contacto","name":"Contacto"}
   ],
   "content":{
+    "inicio":[],
     "noticias":[
       {"title":"Inicio de clases 2025","text":"El año escolar comenzó con entusiasmo y participación de toda la comunidad educativa.","image":"https://via.placeholder.com/400x200","date":"2025-09-01"},
-      {"title":"Proyecto de Ciencias","text":"Los estudiantes realizaron un experimento sobre energías renovables con resultados exitosos.","image":"https://via.placeholder.com/400x200","date":"2025-09-05"}
+      {"title":"Proyecto de Ciencias","text":"Los estudiantes realizaron un experimento sobre energías renovables con resultados exitosos.","image":"https://via.placeholder.com/400x200","date":"2025-09-05"},
+      {"title":"Feria de Matemáticas","text":"Se presentó un proyecto de geometría interactiva que fue muy destacado.","image":"https://via.placeholder.com/400x200","date":"2025-09-07"}
     ],
     "eventos":[
-      {"title":"Campeonato de fútbol","text":"El equipo juvenil clasificó a la final intercolegial con gran entusiasmo.","image":"https://via.placeholder.com/400x200","date":"2025-09-10"}
+      {"title":"Campeonato de fútbol","text":"El equipo juvenil clasificó a la final intercolegial con gran entusiasmo.","image":"https://via.placeholder.com/400x200","date":"2025-09-10"},
+      {"title":"Concurso de pintura","text":"Los estudiantes mostraron su creatividad en la feria artística anual.","image":"https://via.placeholder.com/400x200","date":"2025-09-12"}
     ],
-    "mision":[
-      {"title":"Nuestra Misión","text":"Formar estudiantes con valores, responsabilidad y conocimientos sólidos que contribuyan a la sociedad."}
-    ],
-    "vision":[
-      {"title":"Nuestra Visión","text":"Ser reconocidos como líderes en educación rural, ofreciendo oportunidades de aprendizaje integral y de calidad."}
-    ],
-    "valores":[
-      {"title":"Nuestros Valores","text":"Respeto, responsabilidad, solidaridad, honestidad y compromiso son los pilares de nuestra institución."}
-    ],
-    "historia":[
-      {"title":"Nuestra Historia","text":"La IER Las Malvinas fue fundada en 1985 con el objetivo de brindar educación de calidad en el área rural."}
-    ],
-    "programas":[
-      {"title":"Programas Educativos","text":"Ofrecemos programas desde primaria hasta secundaria, incluyendo actividades complementarias y extracurriculares."}
-    ],
-    "horarios":[
-      {"title":"Horarios","text":"Clases de lunes a viernes de 7:00 a 12:00 y de 13:00 a 16:00 horas."}
-    ],
-    "actividades":[
-      {"title":"Actividades Académicas","text":"Charlas, talleres, ferias educativas y concursos para fomentar el aprendizaje integral de los estudiantes."}
-    ],
-    "contacto":[
-      {"title":"Contáctanos","text":"Dirección: Vereda Las Malvinas, Caucasia, Antioquia. Teléfono: (4) 1234567. Correo: info@ierlasmalvinas.edu.co"}
-    ]
+    "mision":[{"title":"Nuestra Misión","text":"Formar estudiantes con valores, responsabilidad y conocimientos sólidos que contribuyan a la sociedad."}],
+    "vision":[{"title":"Nuestra Visión","text":"Ser reconocidos como líderes en educación rural, ofreciendo oportunidades de aprendizaje integral y de calidad."}],
+    "valores":[{"title":"Nuestros Valores","text":"Respeto, responsabilidad, solidaridad, honestidad y compromiso son los pilares de nuestra institución."}],
+    "historia":[{"title":"Nuestra Historia","text":"La IER Las Malvinas fue fundada en 1985 con el objetivo de brindar educación de calidad en el área rural."}],
+    "programas":[{"title":"Programas Educativos","text":"Ofrecemos programas desde primaria hasta secundaria, incluyendo actividades complementarias y extracurriculares."}],
+    "horarios":[{"title":"Horarios","text":"Clases de lunes a viernes de 7:00 a 12:00 y de 13:00 a 16:00 horas."}],
+    "actividades":[{"title":"Actividades Académicas","text":"Charlas, talleres, ferias educativas y concursos para fomentar el aprendizaje integral de los estudiantes."}],
+    "contacto":[{"title":"Contáctanos","text":"Dirección: Vereda Las Malvinas, Caucasia, Antioquia. Teléfono: (4) 1234567. Correo: info@ierlasmalvinas.edu.co"}]
   }
 }
