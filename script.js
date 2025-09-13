@@ -1,79 +1,23 @@
-const $ = id => document.getElementById(id);
-let CONTENT = null;
-
-async function loadContent(){
-  const r = await fetch('contenido.json');
-  CONTENT = await r.json();
-  renderMenu();
-  renderSlider();
-  router();
-}
-
-function renderMenu(){
-  const nav = $('site-nav');
-  nav.innerHTML = '';
-  const ul = document.createElement('ul');
-
-  (CONTENT.sections || []).forEach(section => {
-    const li = document.createElement('li');
-    li.style.position = 'relative';
-    const a = document.createElement('a');
-    a.href = '#' + section.id;
-    a.textContent = section.name;
-    li.appendChild(a);
-
-    // Submenu si hay hijos
-    if(section.children && section.children.length){
-      const sub = document.createElement('div');
-      sub.className = 'submenu';
-      section.children.forEach(ch => {
-        const ca = document.createElement('a');
-        ca.href = '#' + ch.id;
-        ca.textContent = ch.name;
-        sub.appendChild(ca);
-      });
-      li.appendChild(sub);
-      li.addEventListener('mouseover',()=>{sub.style.display='block'});
-      li.addEventListener('mouseout',()=>{sub.style.display='none'});
-    }
-
-    ul.appendChild(li);
-  });
-
-  nav.appendChild(ul);
-}
-
-function renderSlider(){
-  const container = $('slider-container');
-  container.innerHTML = '';
-  const slides = (CONTENT.content.noticias || []).slice(0,3);
-  slides.forEach(slide=>{
-    const div = document.createElement('div');
-    div.className='slide';
-    div.innerHTML=`<img src="${slide.image}" alt="${slide.title}">`;
-    container.appendChild(div);
-  });
-  let index=0;
-  setInterval(()=>{
-    const slidesDOM = document.querySelectorAll('.slide');
-    if(slidesDOM.length===0) return;
-    index = (index+1)%slidesDOM.length;
-    slidesDOM.forEach((s,i)=>s.style.transform=`translateX(-${index*100}%)`);
-  },5000);
-}
-
 function showSection(id){
   const main = $('section-content');
   main.innerHTML = '';
 
   // Mostrar solo banner en inicio
   if(id==='inicio'){
-    $('hero').innerHTML = `<div class="hero-inner"><img src="${CONTENT.content.inicio[0].image}" alt="Bienvenidos"></div>`;
+    $('hero').innerHTML = `
+      <div class="hero-inner">
+        <img src="${CONTENT.content.inicio[0].image}" alt="Bienvenidos">
+      </div>
+    `;
+    // Limpiar contenido principal para que no aparezca nada debajo
+    main.innerHTML = '';
     return;
   } else {
-    $('hero').innerHTML = ''; // limpiar banner al entrar en otras secciones
+    // Limpiar banner si no es inicio
+    $('hero').innerHTML = '';
   }
 
+  // Mostrar contenido de otras secciones
   const section = (CONTENT.sections || []).find(s=>s.id===id)
     || (CONTENT.sections||[]).flatMap(s=>s.children||[]).find(c=>c.id===id);
 
@@ -108,11 +52,3 @@ function showSection(id){
   });
   main.appendChild(grid);
 }
-
-function router(){
-  const hash = window.location.hash.replace('#','') || 'inicio';
-  showSection(hash);
-}
-
-window.addEventListener('hashchange', router);
-window.addEventListener('DOMContentLoaded', loadContent);
