@@ -21,7 +21,6 @@ function renderMenu(){
     a.textContent = section.name;
     li.appendChild(a);
 
-    // Submenu
     if(section.children && section.children.length){
       const sub = document.createElement('div');
       sub.className='submenu';
@@ -61,14 +60,6 @@ function renderSlider(){
 function showSection(id){
   const main = $('section-content');
   main.innerHTML='';
-
-  if(id==='inicio'){
-    // Mostrar banner solo
-    $('hero').innerHTML = `<div class="hero-inner"><img src="${CONTENT.content.inicio[0].image}" alt="Bienvenidos"></div>`;
-    return;
-  } else {
-    $('hero').innerHTML=''; // quitar banner en otras secciones
-  }
 
   const section = (CONTENT.sections||[]).find(s=>s.id===id)
     || (CONTENT.sections||[]).flatMap(s=>s.children||[]).find(c=>c.id===id);
