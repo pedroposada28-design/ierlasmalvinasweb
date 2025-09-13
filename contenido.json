@@ -64,15 +64,7 @@
         "audio": "",
         "link": ""
       },
-      {
-        "title": "Feria de ciencias",
-        "date": "2025-08-20",
-        "text": "<p>Los estudiantes presentaron proyectos de ciencia y tecnología.</p>",
-        "image": "",
-        "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "audio": "",
-        "link": ""
-      }
+     
     ],
     "eventos": [
       {
@@ -108,4 +100,5 @@
     ]
   }
 }
+
 
