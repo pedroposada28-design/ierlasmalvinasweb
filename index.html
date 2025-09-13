@@ -1,38 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>IER Las Malvinas</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Optional: AOS (animaciones al hacer scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <h1>IER Las Malvinas</h1>
-    <nav>
-      <ul class="menu">
-        <li><a href="#">Inicio</a></li>
-        <li class="submenu">
-          <a href="#">Secciones ▾</a>
-          <ul>
-            <li><a href="#" onclick="mostrarSeccion('noticias')">Noticias</a></li>
-            <li><a href="#" onclick="mostrarSeccion('eventos')">Eventos</a></li>
-            <li><a href="#" onclick="mostrarSeccion('academico')">Académico</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="img/logo.png" alt="Logo IER Las Malvinas" id="logo" onerror="this.style.display='none'">
+        <div class="brand-text">
+          <h1 id="site-title">IER Las Malvinas</h1>
+          <small id="site-subtitle">Formando con valores y saber</small>
+        </div>
+      </div>
+
+      <nav id="site-nav" class="main-nav">
+        <!-- menú dinámico -->
+      </nav>
+
+      <button id="btn-menu" class="hamburger" aria-label="menu">☰</button>
+    </div>
   </header>
 
-  <main id="contenido">
-    <h2>Bienvenidos a la IER Las Malvinas</h2>
-    <p>Selecciona una sección para ver las publicaciones.</p>
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h2 id="hero-title">Institución Educativa Rural Las Malvinas</h2>
+        <p id="hero-sub">Formando estudiantes con valores, conocimiento y compromiso.</p>
+        <a id="hero-cta" class="btn" href="#noticias">Ver noticias</a>
+      </div>
+      <div class="hero-image">
+        <img id="hero-img" src="img/portada.jpg" alt="Portada" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <main class="container" id="main">
+    <section id="section-content" class="section-content">
+      <!-- Contenido dinámico -->
+      <h2 class="section-title">Bienvenidos</h2>
+      <p class="lead">Seleccione una sección en el menú para ver su contenido.</p>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2025 IER Las Malvinas</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>IER Las Malvinas</strong>
+          <p>Dirección • Teléfono • Correo</p>
+        </div>
+        <div>
+          <strong>Síguenos</strong>
+          <p><a href="#" target="_blank">Facebook</a> · <a href="#" target="_blank">YouTube</a></p>
+        </div>
+      </div>
+      <p class="copy">© <span id="year"></span> IER Las Malvinas — Todos los derechos reservados</p>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Modal vista rápida -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-inner">
+      <button id="modal-close" class="modal-close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js" type="module"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear(); AOS.init();</script>
 </body>
 </html>
