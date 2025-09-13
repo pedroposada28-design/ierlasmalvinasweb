@@ -1,0 +1,35 @@
+{
+  "noticias": [
+    {
+      "titulo": "Nueva biblioteca inaugurada",
+      "fecha": "2025-09-01",
+      "texto": "La institución inauguró una nueva biblioteca escolar.",
+      "imagen": "https://i.imgur.com/abcd123.jpg",
+      "video": "",
+      "audio": "",
+      "enlace": ""
+    }
+  ],
+  "eventos": [
+    {
+      "titulo": "Semana cultural",
+      "fecha": "2025-08-15",
+      "texto": "Se celebró la semana cultural con actividades artísticas.",
+      "imagen": "",
+      "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "audio": "",
+      "enlace": ""
+    }
+  ],
+  "academico": [
+    {
+      "titulo": "Entrega de boletines",
+      "fecha": "2025-07-30",
+      "texto": "Se realizará la entrega de boletines finales el próximo viernes.",
+      "imagen": "",
+      "video": "",
+      "audio": "",
+      "enlace": "https://drive.google.com/ejemplo"
+    }
+  ]
+}
