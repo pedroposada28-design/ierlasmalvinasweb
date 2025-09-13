@@ -84,6 +84,16 @@
         "audio": "",
         "link": ""
       }
+      {
+  "title": "Nueva nota de ejemplo",
+  "date": "2025-09-13",
+  "text": "<p>Texto de la nota. <strong>Formato</strong> OK.</p>",
+  "image": "https://i.imgur.com/ejemplo.jpg",
+  "video": "",
+  "audio": "",
+  "link": ""
+}
+
     ],
     "contacto": [
       {
@@ -98,3 +108,4 @@
     ]
   }
 }
+
