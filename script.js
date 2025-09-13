@@ -2,15 +2,10 @@ const $ = id => document.getElementById(id);
 let CONTENT = null;
 
 async function loadContent(){
-  try {
-    const r = await fetch('contenido.json');
-    CONTENT = await r.json();
-    renderMenu();
-    renderSlider();
-    router();
-  } catch(err){
-    console.error("Error cargando JSON:", err);
-  }
+  const r = await fetch('contenido.json');
+  CONTENT = await r.json();
+  renderMenu();
+  router();
 }
 
 function renderMenu(){
@@ -25,6 +20,7 @@ function renderMenu(){
     a.textContent = section.name;
     li.appendChild(a);
 
+    // Submenu si hay hijos
     if(section.children && section.children.length){
       const sub = document.createElement('div');
       sub.className = 'submenu';
@@ -35,32 +31,23 @@ function renderMenu(){
         sub.appendChild(ca);
       });
       li.appendChild(sub);
+      li.addEventListener('mouseover',()=>{sub.style.display='block'});
+      li.addEventListener('mouseout',()=>{sub.style.display='none'});
     }
+
     ul.appendChild(li);
   });
 
   nav.appendChild(ul);
 }
 
-function renderSlider(){
-  const container = $('slider-container');
-  container.innerHTML = '';
-  const slides = (CONTENT.content.noticias || []).slice(0,3);
-  slides.forEach(slide=>{
-    const div = document.createElement('div');
-    div.className='slide';
-    div.innerHTML=`<img src="${slide.image}" alt="${slide.title}">`;
-    container.appendChild(div);
-  });
-  let index=0;
-  setInterval(()=>{
-    const slidesDOM = document.querySelectorAll('.slide');
-    index = (index+1)%slidesDOM.length;
-    slidesDOM.forEach((s,i)=>s.style.transform=`translateX(-${index*100}%)`);
-  },5000);
-}
-
 function showSection(id){
+  if(id==='inicio'){
+    // No mostrar tarjetas, solo el banner
+    $('section-content').innerHTML = '';
+    return;
+  }
+
   const section = (CONTENT.sections || []).find(s=>s.id===id)
     || (CONTENT.sections||[]).flatMap(s=>s.children||[]).find(c=>c.id===id);
 
@@ -75,13 +62,7 @@ function showSection(id){
   main.appendChild(title);
 
   const items = CONTENT.content[section.id] || [];
-  if(items.length===0){
-    const p = document.createElement('p');
-    p.className='lead';
-    p.textContent='No hay publicaciones en esta sección.';
-    main.appendChild(p);
-    return;
-  }
+  if(items.length===0){return;} // No mostrar mensaje si está vacío
 
   const grid = document.createElement('div');
   grid.className='cards';
@@ -100,7 +81,7 @@ function showSection(id){
 }
 
 function router(){
-  const hash = window.location.hash.replace('#','') || CONTENT.sections[0].id;
+  const hash = window.location.hash.replace('#','') || 'inicio';
   showSection(hash);
 }
 
