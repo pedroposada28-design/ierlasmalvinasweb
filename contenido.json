@@ -1,104 +1,40 @@
 {
-  "hero": {
-    "title": "Institución Educativa Rural Las Malvinas",
-    "subtitle": "Formando estudiantes con valores y compromiso.",
-    "image": "img/portada.jpg"
-  },
-  "sections": [
+  "sections":[
+    {"id":"inicio","name":"Inicio"},
+    {"id":"noticias","name":"Noticias"},
+    {"id":"eventos","name":"Eventos"},
     {
-      "id": "inicio",
-      "name": "Inicio"
-    },
-    {
-      "id": "institucional",
-      "name": "Institucional",
-      "children": [
-        { "id": "mision", "name": "Misión" },
-        { "id": "vision", "name": "Visión" },
-        { "id": "historia", "name": "Historia" }
+      "id":"institucional",
+      "name":"Institucional",
+      "children":[
+        {"id":"mision","name":"Misión"},
+        {"id":"vision","name":"Visión"},
+        {"id":"valores","name":"Valores"},
+        {"id":"historia","name":"Historia"}
       ]
     },
     {
-      "id": "noticias",
-      "name": "Noticias"
+      "id":"academico",
+      "name":"Académico",
+      "children":[
+        {"id":"programas","name":"Programas Educativos"},
+        {"id":"horarios","name":"Horarios"},
+        {"id":"actividades","name":"Actividades"}
+      ]
     },
-    {
-      "id": "eventos",
-      "name": "Eventos"
-    },
-    {
-      "id": "contacto",
-      "name": "Contacto"
-    }
+    {"id":"contacto","name":"Contacto"}
   ],
-  "content": {
-    "mision": [
-      {
-        "title": "Nuestra Misión",
-        "date": "2025-01-01",
-        "text": "<p>Formar estudiantes responsables, críticos y comprometidos con su comunidad.</p>",
-        "image": "",
-        "video": "",
-        "audio": "",
-        "link": ""
-      }
-    ],
-    "vision": [
-      {
-        "title": "Nuestra Visión",
-        "date": "2025-01-01",
-        "text": "<p>Ser una institución referente en educación rural para 2030.</p>",
-        "image": "",
-        "video": "",
-        "audio": "",
-        "link": ""
-      }
-    ],
-    "noticias": [
-      {
-        "title": "Inauguración de la biblioteca",
-        "date": "2025-09-01",
-        "text": "<p>Se inauguró la nueva biblioteca con donación de libros y mobiliario.</p>",
-        "image": "https://picsum.photos/800/450?random=1",
-        "video": "",
-        "audio": "",
-        "link": ""
-      },
-     
-    ],
-    "eventos": [
-      {
-        "title": "Semana cultural",
-        "date": "2025-07-15",
-        "text": "<p>Actividades artísticas y deportivas en la institución.</p>",
-        "image": "https://picsum.photos/800/450?random=2",
-        "video": "",
-        "audio": "",
-        "link": ""
-      }
-      {
-  "title": "Nueva nota de ejemplo",
-  "date": "2025-09-13",
-  "text": "<p>Texto de la nota. <strong>Formato</strong> OK.</p>",
-  "image": "https://i.imgur.com/ejemplo.jpg",
-  "video": "",
-  "audio": "",
-  "link": ""
-}
-
-    ],
-    "contacto": [
-      {
-        "title": "Contacto",
-        "date": "",
-        "text": "<p>Tel: (XXX) XXX-XXXX<br>Correo: colegio@ejemplo.edu.co<br>Dirección: Vereda Las Malvinas</p>",
-        "image": "",
-        "video": "",
-        "audio": "",
-        "link": ""
-      }
-    ]
+  "content":{
+    "inicio":[{"title":"Bienvenidos","text":"Bienvenidos a la IER Las Malvinas, institución educativa rural, formando estudiantes con valores y compromiso.","image":"img/portada.jpg"}],
+    "noticias":[{"title":"Inicio de clases 2025","text":"El año escolar comenzó con entusiasmo y participación de toda la comunidad educativa.","image":"https://via.placeholder.com/400x200","date":"2025-09-01"}],
+    "eventos":[{"title":"Campeonato de fútbol","text":"El equipo juvenil clasificó a la final intercolegial con gran entusiasmo.","image":"https://via.placeholder.com/400x200","date":"2025-09-10"}],
+    "mision":[{"title":"Nuestra Misión","text":"Formar estudiantes con valores, responsabilidad y conocimientos sólidos que contribuyan a la sociedad."}],
+    "vision":[{"title":"Nuestra Visión","text":"Ser reconocidos como líderes en educación rural, ofreciendo oportunidades de aprendizaje integral y de calidad."}],
+    "valores":[{"title":"Nuestros Valores","text":"Respeto, responsabilidad, solidaridad, honestidad y compromiso son los pilares de nuestra institución."}],
+    "historia":[{"title":"Nuestra Historia","text":"La IER Las Malvinas fue fundada en 1985 con el objetivo de brindar educación de calidad en el área rural."}],
+    "programas":[{"title":"Programas Educativos","text":"Ofrecemos programas desde primaria hasta secundaria, incluyendo actividades complementarias y extracurriculares."}],
+    "horarios":[{"title":"Horarios","text":"Clases de lunes a viernes de 7:00 a 12:00 y de 13:00 a 16:00 horas."}],
+    "actividades":[{"title":"Actividades Académicas","text":"Charlas, talleres, ferias educativas y concursos para fomentar el aprendizaje integral de los estudiantes."}],
+    "contacto":[{"title":"Contáctanos","text":"Dirección: Vereda Las Malvinas, Caucasia, Antioquia. Teléfono: (4) 1234567. Correo: info@ierlasmalvinas.edu.co"}]
   }
 }
-
-
