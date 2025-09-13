@@ -70,5 +70,5 @@ li:hover .submenu{display:block;}
 }
 @media(max-width:600px){
   .cards{grid-template-columns:1fr;}
-  .hero h2{font-size:1.4rem;}
+  .hero-image img{width:100%;}
 }
