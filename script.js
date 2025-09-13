@@ -1,5 +1,6 @@
 const $ = id => document.getElementById(id);
 let CONTENT = null;
+const hero = $('hero');
 
 async function loadContent(){
   const r = await fetch('contenido.json');
@@ -16,38 +17,21 @@ function renderMenu(){
 
   (CONTENT.sections || []).forEach(section => {
     const li = document.createElement('li');
-    li.style.position = 'relative';
     const a = document.createElement('a');
     a.href = '#' + section.id;
     a.textContent = section.name;
     li.appendChild(a);
 
-    // Submenu si hay hijos
     if(section.children && section.children.length){
       const sub = document.createElement('div');
       sub.className = 'submenu';
-      sub.style.position = 'absolute';
-      sub.style.top = '100%';
-      sub.style.left = '0';
-      sub.style.background='#fff';
-      sub.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)';
-      sub.style.display='none';
-      section.children.forEach(ch => {
+      section.children.forEach(ch=>{
         const ca = document.createElement('a');
         ca.href = '#' + ch.id;
         ca.textContent = ch.name;
-        ca.style.display='block';
-        ca.style.padding='8px 12px';
-        ca.style.color='#000';
-        ca.style.textDecoration='none';
-        ca.addEventListener('mouseover',()=>{ca.style.background='#f0f0f0'});
-        ca.addEventListener('mouseout',()=>{ca.style.background='transparent'});
         sub.appendChild(ca);
       });
       li.appendChild(sub);
-      // Mostrar submenu al pasar el mouse
-      li.addEventListener('mouseover',()=>{sub.style.display='block'});
-      li.addEventListener('mouseout',()=>{sub.style.display='none'});
     }
 
     ul.appendChild(li);
@@ -63,9 +47,7 @@ function renderSlider(){
   slides.forEach(slide=>{
     const div = document.createElement('div');
     div.className='slide';
-    div.style.width='100%';
-    div.style.transition='transform 0.5s ease';
-    div.innerHTML=`<img src="${slide.image}" alt="${slide.title}" style="width:100%; border-radius:12px;">`;
+    div.innerHTML=`<img src="${slide.image}" alt="${slide.title}">`;
     container.appendChild(div);
   });
   let index=0;
@@ -77,21 +59,19 @@ function renderSlider(){
 }
 
 function showSection(id){
-  const hero = document.getElementById('hero');
-
   if(id==='inicio'){
-    hero.style.display = 'block';
-    $('section-content').innerHTML = '';
+    hero.style.display='block';
+    $('section-content').innerHTML='';
     return;
   } else {
-    hero.style.display = 'none';
+    hero.style.display='none';
   }
 
   const section = (CONTENT.sections || []).find(s=>s.id===id)
     || (CONTENT.sections||[]).flatMap(s=>s.children||[]).find(c=>c.id===id);
 
   const main = $('section-content');
-  main.innerHTML = '';
+  main.innerHTML='';
 
   if(!section){main.innerHTML='<h2>Sección no encontrada</h2>';return;}
 
