@@ -4,8 +4,7 @@
     {"id":"noticias","name":"Noticias"},
     {"id":"eventos","name":"Eventos"},
     {
-      "id":"institucional",
-      "name":"Institucional",
+      "id":"institucional","name":"Institucional",
       "children":[
         {"id":"mision","name":"Misión"},
         {"id":"vision","name":"Visión"},
@@ -14,8 +13,7 @@
       ]
     },
     {
-      "id":"academico",
-      "name":"Académico",
+      "id":"academico","name":"Académico",
       "children":[
         {"id":"programas","name":"Programas Educativos"},
         {"id":"horarios","name":"Horarios"},
@@ -29,10 +27,13 @@
       {"title":"Bienvenidos","text":"Bienvenidos a la IER Las Malvinas, institución educativa rural, formando estudiantes con valores y compromiso.","image":"img/portada.jpg"}
     ],
     "noticias":[
-      {"title":"Inicio de clases 2025","text":"El año escolar comenzó con entusiasmo y participación de toda la comunidad educativa.","image":"https://via.placeholder.com/400x200","date":"2025-09-01"}
+      {"title":"Inicio de clases 2025","text":"El año escolar comenzó con entusiasmo y participación de toda la comunidad educativa.","image":"https://via.placeholder.com/400x200","date":"2025-09-01"},
+      {"title":"Proyecto de Ciencias","text":"Los estudiantes realizaron un experimento sobre energías renovables con resultados exitosos.","image":"https://via.placeholder.com/400x200","date":"2025-09-05"},
+      {"title":"Feria de Matemáticas","text":"Se presentó un proyecto de geometría interactiva que fue muy destacado.","image":"https://via.placeholder.com/400x200","date":"2025-09-07"}
     ],
     "eventos":[
-      {"title":"Campeonato de fútbol","text":"El equipo juvenil clasificó a la final intercolegial con gran entusiasmo.","image":"https://via.placeholder.com/400x200","date":"2025-09-10"}
+      {"title":"Campeonato de fútbol","text":"El equipo juvenil clasificó a la final intercolegial con gran entusiasmo.","image":"https://via.placeholder.com/400x200","date":"2025-09-10"},
+      {"title":"Concurso de pintura","text":"Los estudiantes mostraron su creatividad en la feria artística anual.","image":"https://via.placeholder.com/400x200","date":"2025-09-12"}
     ],
     "mision":[{"title":"Nuestra Misión","text":"Formar estudiantes con valores, responsabilidad y conocimientos sólidos que contribuyan a la sociedad."}],
     "vision":[{"title":"Nuestra Visión","text":"Ser reconocidos como líderes en educación rural, ofreciendo oportunidades de aprendizaje integral y de calidad."}],
