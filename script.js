@@ -16,11 +16,13 @@ function renderMenu(){
 
   (CONTENT.sections || []).forEach(section => {
     const li = document.createElement('li');
+    li.style.position = 'relative';
     const a = document.createElement('a');
     a.href = '#' + section.id;
     a.textContent = section.name;
     li.appendChild(a);
 
+    // Submenu si hay hijos
     if(section.children && section.children.length){
       const sub = document.createElement('div');
       sub.className = 'submenu';
@@ -31,8 +33,8 @@ function renderMenu(){
         sub.appendChild(ca);
       });
       li.appendChild(sub);
-      li.addEventListener('mouseover',()=>{sub.style.display='block';});
-      li.addEventListener('mouseout',()=>{sub.style.display='none';});
+      li.addEventListener('mouseover',()=>{sub.style.display='block'});
+      li.addEventListener('mouseout',()=>{sub.style.display='none'});
     }
 
     ul.appendChild(li);
@@ -54,21 +56,28 @@ function renderSlider(){
   let index=0;
   setInterval(()=>{
     const slidesDOM = document.querySelectorAll('.slide');
+    if(slidesDOM.length===0) return;
     index = (index+1)%slidesDOM.length;
     slidesDOM.forEach((s,i)=>s.style.transform=`translateX(-${index*100}%)`);
   },5000);
 }
 
 function showSection(id){
-  const section = (CONTENT.sections || []).find(s=>s.id===id)
-    || (CONTENT.sections||[]).flatMap(s=>s.children||[]).find(c=>c.id===id);
-
   const main = $('section-content');
   main.innerHTML = '';
 
-  if(!section){
-    main.innerHTML='<h2>Sección no encontrada</h2>'; return;
+  // Mostrar solo banner en inicio
+  if(id==='inicio'){
+    $('hero').innerHTML = `<div class="hero-inner"><img src="${CONTENT.content.inicio[0].image}" alt="Bienvenidos"></div>`;
+    return;
+  } else {
+    $('hero').innerHTML = ''; // limpiar banner al entrar en otras secciones
   }
+
+  const section = (CONTENT.sections || []).find(s=>s.id===id)
+    || (CONTENT.sections||[]).flatMap(s=>s.children||[]).find(c=>c.id===id);
+
+  if(!section){main.innerHTML='<h2>Sección no encontrada</h2>';return;}
 
   const title = document.createElement('h2');
   title.className='section-title';
